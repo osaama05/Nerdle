@@ -64,8 +64,6 @@
             closeBtn.Location = new Point(x + 40, y);
             closeBtn.Text = "Close";
             closeBtn.Name = "btnClose";
-
-
         }
     }
 }

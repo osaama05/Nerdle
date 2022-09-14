@@ -1,3 +1,5 @@
+using Nerdle_Lopputyö.Forms;
+
 namespace Nerdle_Lopputyö
 {
     public partial class Nerdle : Form
@@ -16,8 +18,9 @@ namespace Nerdle_Lopputyö
         private Files files = new Files();
         private Help help = null;
         private Stats stats = null;
+        StartMenu start = new StartMenu();
 
-
+        
         public Nerdle()
         {
             InitializeComponent();
@@ -26,6 +29,9 @@ namespace Nerdle_Lopputyö
             FormBorderStyle = FormBorderStyle.FixedSingle;
             BackColor = Color.SlateGray;
             MaximizeBox = false;
+
+            start.ShowDialog();
+            numberOfRows = start.NumOfRows;
 
             CreateTextBoxes();
             CreateButtons();
@@ -552,6 +558,19 @@ namespace Nerdle_Lopputyö
             }
         }
 
+        private void ToolStripMenuItemHC_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to enable hardcore mode?", "Hardcore Mode", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Environment.Exit(0);
+
+            }
+        }
     }
     
 }
